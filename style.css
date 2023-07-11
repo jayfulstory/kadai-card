@@ -1,0 +1,102 @@
+:root {
+  --font-color-black: rgb(29, 29, 31);
+  --font-color-gray: #999;
+}
+
+html {
+  font-size: 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--font-color-black);
+}
+
+body {
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--font-color-black);
+}
+
+.global--nav__background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  border-bottom: 1px solid var(--font-color-gray);
+  background-color: rgba(251, 251, 253, 0.8);
+  backdrop-filter: saturate(180%) blur(10px);
+  z-index: 1;
+}
+
+.global--nav {
+  max-width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 22px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+}
+
+.logo {
+  /* padding-left: 22px; */
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.global--nav__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.scroll--section {
+  /* position: relative; */
+  text-align: center;
+  height: 800px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+#scroll--section__0 {
+  position: relative;
+}
+
+#title {
+  /* position: sticky; */
+  /* text-align: center; */
+  margin-top: 35vh;
+  top: 30vh;
+  left: 0;
+  right: 0;
+  font-size: 8rem;
+  transform-origin: 50% 60%;
+}
+
+.sticky--elem {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.main--message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: var(--font-color-gray);
+  font-weight: bold;
+  /* font-family: 'Noto Sans JP', sans-serif; */
+}
+
+@media (max-width: 1024px) {
+  #title {
+    font-size: 5rem;
+  }
+}
