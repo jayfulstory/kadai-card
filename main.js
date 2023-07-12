@@ -15,6 +15,7 @@ const sceneInfo = [
     },
     values: {
       titleOpacity_in: [0.15, 1, { start: 0, end: 0.2 }],
+      // titleOpacity_out: [1, 0, { start: 0.9, end: 1 }],
       titleMatrix: [1, 110, { start: 0.3, end: 1 }],
     },
   },
@@ -36,7 +37,7 @@ const sceneInfo = [
       imagesSequence: [0, 199],
       canvasScale: [1.1, 0.6, { start: 0, end: 0.9 }],
       canvasOpacity: [1, 0, { start: 0.85, end: 0.95 }],
-      titleOpacity_out: [1, 0, { start: 0.05, end: 0.1 }],
+      // titleOpacity_out: [1, 0, { start: 0, end: 0.1 }],
       messageA_Opacity_in: [0, 1, { start: 0, end: 0.15 }],
       messageA_Opacity_out: [1, 0, { start: 0.25, end: 0.4 }],
       messageA_Matrix_in: [1, 1.2, { start: 0, end: 0.4 }],
@@ -139,9 +140,16 @@ function playAnimation() {
 
   switch (currentScene) {
     case 0:
+      // objs.title.style.display = 'block';
       if (scrollRatio <= 0.25) {
         objs.title.style.opacity = calcValues(values.titleOpacity_in, currentY);
       }
+      // else {
+      //   objs.title.style.opacity = `${calcValues(
+      //     values.titleOpacity_out,
+      //     currentY
+      //   )}`;
+      // }
       objs.title.style.transform = `
       matrix(${calcValues(values.titleMatrix, currentY)},0,0,
       ${calcValues(values.titleMatrix, currentY)},0,0)`;
@@ -149,19 +157,21 @@ function playAnimation() {
     case 1:
       let sequence = Math.round(calcValues(values.imagesSequence, currentY));
       objs.context.drawImage(objs.videoImages[sequence], 0, 0);
-      if (scrollRatio <= 0.15) {
-        sceneInfo[0].objs.title.style.opacity = calcValues(
-          values.titleOpacity_out,
-          currentY
-        );
-      }
+      // if (scrollRatio <= 0.1) {
+      //   sceneInfo[0].objs.title.style.opacity = calcValues(
+      //       values.titleOpacity_out,
+      //       currentY
+      //     );
+      //   }
 
       if (scrollRatio <= 0.2) {
+        sceneInfo[0].objs.title.style.display = 'block';
         objs.messageA.style.opacity = calcValues(
           values.messageA_Opacity_in,
           currentY
         );
       } else {
+        sceneInfo[0].objs.title.style.display = 'none';
         objs.messageA.style.opacity = calcValues(
           values.messageA_Opacity_out,
           currentY
@@ -238,7 +248,7 @@ window.addEventListener('load', () => {
 
   window.addEventListener('orientationchange', setLayout);
 
-  document.querySelector('.loading').addEventListener('transitonend', e => {
+  document.querySelector('.loading').addEventListener('transitionend', e => {
     document.body.removeChild(e.currentTarget);
   });
 });
