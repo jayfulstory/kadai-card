@@ -27,6 +27,7 @@
 
 .content {
   max-width: 600px;
+  padding: 0 16px;
   margin: 80px auto;
   margin-bottom: 60px;
 }
