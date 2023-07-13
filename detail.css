@@ -24,3 +24,21 @@
   box-shadow: 0 30px 60px -6px rgba(50, 50, 93, 0.25),
     0 18px 36px -9px rgba(0, 0, 0, 0.3), 0 -12px 36px -4px rgba(0, 0, 0, 0.025);
 }
+
+.content {
+  max-width: 600px;
+  margin: 80px auto;
+  margin-bottom: 60px;
+}
+.back {
+  text-align: center;
+  font-size: 1.6rem;
+  width: 60px;
+  margin: 0 auto;
+  border-bottom: 1px solid transparent;
+  transition: all 0.5s ease;
+}
+
+.back:hover {
+  border-bottom: 1px solid black;
+}
