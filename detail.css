@@ -1,0 +1,26 @@
+.title--div {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.detail--title {
+  text-align: center;
+  font-size: 5rem;
+  margin-top: 10vh;
+  margin-bottom: 2vh;
+}
+
+.detail--img {
+  flex: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.detail--img img {
+  width: 90%;
+  margin: 0 1rem;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px -6px rgba(50, 50, 93, 0.25),
+    0 18px 36px -9px rgba(0, 0, 0, 0.3), 0 -12px 36px -4px rgba(0, 0, 0, 0.025);
+}
